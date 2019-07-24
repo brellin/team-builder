@@ -2,13 +2,11 @@ import React, { useState } from 'react'
 
 const Member = props => {
 
-    const [member, setMember] = useState(props.member)
+    const [member, setMember] = useState({ ...props.member })
 
     const [editing, setEditing] = useState(false)
 
     const handleChange = e => setMember({ ...member, [e.target.name]: e.target.value })
-
-    console.log(member)
 
     if (editing) {
 
@@ -16,7 +14,8 @@ const Member = props => {
             <form onSubmit={(e) => {
                 e.preventDefault()
                 props.update(member)
-                setEditing(!editing)
+                setMember({ ...member })
+                setEditing(false)
             }} className='update-form'>
                 <label htmlFor="name">
                     Name:<input type="text" onChange={handleChange} value={member.name} name='name' />
@@ -42,7 +41,7 @@ const Member = props => {
                 <h3>Email: {props.member.email}</h3>
                 <h3>Role: {props.member.role}</h3>
 
-                <button onClick={() => setEditing(!editing)}>Edit Member</button>
+                <button onClick={() => setEditing(true)}>Edit Member</button>
 
             </div>
         )

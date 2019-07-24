@@ -4,17 +4,21 @@ import Form from './components/Form'
 
 import './App.scss';
 
-const App = () => {
-  const [memberList, setMemberList] = useState([])
+const App = props => {
+  const [memberList, setMemberList] = useState(props.members)
 
   const submit = member => setMemberList([...memberList, member])
 
   const update = single => setMemberList([...memberList.map(member => {
-    if (single.id === member.id) return single
-    return member
+    console.log(memberList)
+    if (single.id === member.id) {
+      return single
+    } else {
+      return member
+    }
   })])
 
-  const del = single => setMemberList([...memberList.filter(member => single.id !== member.id)])
+  const del = single => setMemberList([...memberList.filter(member => member.id !== single.id)])
 
   return (
     <div className='cont'>
