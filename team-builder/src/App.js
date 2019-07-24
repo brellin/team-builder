@@ -28,7 +28,7 @@ const App = () => {
           />
         ))}
       </div>
-      <Form submit={submit} index={memberList.length + 1} />
+      <Form submit={submit} />
     </div>
   );
 }

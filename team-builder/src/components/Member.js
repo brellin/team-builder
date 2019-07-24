@@ -8,6 +8,8 @@ const Member = props => {
 
     const handleChange = e => setMember({ ...member, [e.target.name]: e.target.value })
 
+    console.log(member)
+
     if (editing) {
 
         return (
@@ -32,13 +34,15 @@ const Member = props => {
     } else {
 
         return (
-            <div className="member" onClick={() => setEditing(!editing)}>
+            <div className="member">
 
                 <sup onClick={() => props.del(props.member)}>X</sup>
 
                 <h3>Name: {props.member.name}</h3>
                 <h3>Email: {props.member.email}</h3>
                 <h3>Role: {props.member.role}</h3>
+
+                <button onClick={() => setEditing(!editing)}>Edit Member</button>
 
             </div>
         )

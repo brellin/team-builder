@@ -5,7 +5,7 @@ const Form = props => {
         name: '',
         email: '',
         role: '',
-        id: props.index
+        id: parseInt(Math.random() * 1000000000)
     })
 
     const handleChange = e => setInput({
@@ -17,8 +17,10 @@ const Form = props => {
         <form onSubmit={(e) => {
             e.preventDefault()
             props.submit(input)
-            setInput({ name: '', email: '', role: '', id: props.index })
-        }} className='submit-form'>
+            setInput({
+                name: '', email: '', role: '', id: parseInt(Math.random() * 1000000000)
+            })
+        }} className='submit-form' >
             <h3>Add a Member</h3>
             <div className='inputs'>
 
@@ -35,7 +37,7 @@ const Form = props => {
             </div>
 
             <button>Add Member</button>
-        </form>
+        </form >
     )
 }
 
