@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Member from './components/Member'
 import Form from './components/Form'
 
-import './App.css';
+import './App.scss';
 
 const App = () => {
   const [memberList, setMemberList] = useState([])
@@ -18,13 +18,15 @@ const App = () => {
 
   return (
     <div className='cont'>
-      {memberList.map((member, index) => (
-        <Member key={index}
-          update={update}
-          del={del}
-          member={member}
-        />
-      ))}
+      <div className='list'>
+        {memberList.map((member, index) => (
+          <Member key={index}
+            update={update}
+            del={del}
+            member={member}
+          />
+        ))}
+      </div>
       <Form submit={submit} index={memberList.length + 1} />
     </div>
   );

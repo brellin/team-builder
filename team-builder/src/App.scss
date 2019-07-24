@@ -1,0 +1,52 @@
+.cont{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 85%;
+  background: #f5f5f555;
+  margin: 0 auto;
+
+  .list{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background: #f5f5f555;
+    width: 100%;
+
+    .update-form{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .member{
+      background: #f5f5f555;
+      color: lime;
+      padding: 0 15px;
+
+      sup{
+        cursor: pointer;
+        color: black;
+        transition: .5s ease;
+        position: relative;
+        right: 0;
+
+        &:hover{
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+  }
+
+  .submit-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
