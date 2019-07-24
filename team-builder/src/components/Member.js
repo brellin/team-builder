@@ -32,13 +32,13 @@ const Member = props => {
     } else {
 
         return (
-            <div className="member">
+            <div className="member" onClick={() => setEditing(!editing)}>
 
                 <sup onClick={() => props.del(props.member)}>X</sup>
 
-                <h3 onClick={() => setEditing(!editing)}>Name: {props.member.name}</h3>
-                <h3 onClick={() => setEditing(!editing)}>Email: {props.member.email}</h3>
-                <h3 onClick={() => setEditing(!editing)}>Role: {props.member.role}</h3>
+                <h3>Name: {props.member.name}</h3>
+                <h3>Email: {props.member.email}</h3>
+                <h3>Role: {props.member.role}</h3>
 
             </div>
         )

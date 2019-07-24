@@ -18,6 +18,7 @@ const App = () => {
 
   return (
     <div className='cont'>
+      <h1>Team Members</h1>
       <div className='list'>
         {memberList.map((member, index) => (
           <Member key={index}
