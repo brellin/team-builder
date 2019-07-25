@@ -8,10 +8,7 @@ const Form = props => {
         id: parseInt(Math.random() * 1000000000)
     })
 
-    const handleChange = e => setInput({
-        ...input,
-        [e.target.name]: e.target.value
-    })
+    const handleChange = e => setInput({ ...input, [e.target.name]: e.target.value })
 
     return (
         <form onSubmit={(e) => {

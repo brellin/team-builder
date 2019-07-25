@@ -9,14 +9,7 @@ const App = props => {
 
   const submit = member => setMemberList([...memberList, member])
 
-  const update = single => setMemberList([...memberList.map(member => {
-    console.log(memberList)
-    if (single.id === member.id) {
-      return single
-    } else {
-      return member
-    }
-  })])
+  const update = single => setMemberList([...memberList.map(member => single.id === member.id ? single : member)])
 
   const del = single => setMemberList([...memberList.filter(member => member.id !== single.id)])
 
